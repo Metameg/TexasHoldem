@@ -264,9 +264,8 @@ class UI(QMainWindow):
         else:
             print("Seat", hero.seat, "wins")
             
-    
 
-# Initialize the app
+# Initialize and run app
 app = QApplication(sys.argv)
 UIWindow = UI()
 app.exec_()

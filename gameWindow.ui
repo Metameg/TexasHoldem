@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>752</width>
-    <height>595</height>
+    <width>786</width>
+    <height>728</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -21,98 +24,229 @@
     <string notr="true">background-color: rgb(213, 213, 213);</string>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="3" column="0">
-     <layout class="QVBoxLayout" name="ChatboxPanel">
-      <item>
-       <spacer name="verticalSpacer_6">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QTextEdit" name="textEdit">
-        <property name="maximumSize">
-         <size>
-          <width>275</width>
-          <height>200</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="LineEditPanel" stretch="0,0,0">
-        <item alignment="Qt::AlignTop">
-         <widget class="QLineEdit" name="ChatboxLineEdit">
-          <property name="minimumSize">
-           <size>
-            <width>60</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>200</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
-          </property>
-         </widget>
-        </item>
-        <item alignment="Qt::AlignTop">
-         <widget class="QPushButton" name="SendButton">
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(81, 0, 0);
-color: rgb(255, 255, 255);</string>
-          </property>
-          <property name="text">
-           <string>Send</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer_11">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </item>
-     </layout>
+    <item row="2" column="1">
+     <widget class="QLabel" name="Table">
+      <property name="minimumSize">
+       <size>
+        <width>300</width>
+        <height>198</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>250</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 2px solid rgb(0,0,0);
+border-radius: 99px;
+background-color: rgb(0, 63, 0);
+font: 'Sans-serif';
+font-size: 16px;
+color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>No-Limit Holdem
+($1/$2) 6-Max</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::PlainText</enum>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignHCenter|Qt::AlignTop</set>
+      </property>
+      <property name="margin">
+       <number>15</number>
+      </property>
+      <layout class="QHBoxLayout" name="BoardCards">
+       <item>
+        <spacer name="table_horizontalSpacer1">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="Flop1">
+         <property name="minimumSize">
+          <size>
+           <width>53</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>53</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 2px solid rgb(0,0,0);
+border-radius: 10px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>Graphics/4_of_clubs.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Flop2">
+         <property name="minimumSize">
+          <size>
+           <width>53</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>53</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 2px solid rgb(0,0,0);
+border-radius: 10px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>Graphics/4_of_clubs.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Flop3">
+         <property name="minimumSize">
+          <size>
+           <width>53</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>53</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 2px solid rgb(0,0,0);
+border-radius: 10px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>Graphics/4_of_clubs.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Turn">
+         <property name="minimumSize">
+          <size>
+           <width>53</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>53</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 2px solid rgb(0,0,0);
+border-radius: 10px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>Graphics/4_of_clubs.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="River">
+         <property name="minimumSize">
+          <size>
+           <width>53</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>53</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 2px solid rgb(0,0,0);
+border-radius: 10px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>Graphics/4_of_clubs.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="table_horizontalSpacer2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
     </item>
     <item row="2" column="2">
      <layout class="QGridLayout" name="Seat5">
       <property name="leftMargin">
-       <number>40</number>
+       <number>0</number>
       </property>
       <property name="rightMargin">
        <number>0</number>
       </property>
-      <item row="0" column="0">
+      <item row="0" column="2">
        <layout class="QVBoxLayout" name="Seat5VLayout" stretch="0,0,0,0,0">
         <property name="sizeConstraint">
          <enum>QLayout::SetDefaultConstraint</enum>
@@ -221,7 +355,7 @@ border-radius: 10px;</string>
           </item>
          </layout>
         </item>
-        <item>
+        <item alignment="Qt::AlignBottom">
          <widget class="QLabel" name="Seat5Label">
           <property name="minimumSize">
            <size>
@@ -238,13 +372,13 @@ border-radius: 10px;</string>
           <property name="styleSheet">
            <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.301136 rgba(10, 10, 10, 255), stop:0.789773 rgba(108, 108, 108, 255));
 font: 12pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);
+color: rgb(199,195,195);
 border-radius: 10px;
 border: 2px solid rgb(255, 255, 255);
 </string>
           </property>
           <property name="text">
-           <string>PlayerName
+           <string>Villain 4
 $1000</string>
           </property>
           <property name="alignment">
@@ -284,14 +418,120 @@ $1000</string>
          </widget>
         </item>
         <item>
-         <spacer name="verticalSpacer_3">
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLabel" name="D4_2">
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>25</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(213, 213, 213);</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>Graphics/DB.png</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="0">
+     <layout class="QVBoxLayout" name="ChatboxPanel">
+      <item>
+       <spacer name="verticalSpacer_6">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="textEdit">
+        <property name="maximumSize">
+         <size>
+          <width>275</width>
+          <height>200</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="LineEditPanel" stretch="0,0,0">
+        <item alignment="Qt::AlignTop">
+         <widget class="QLineEdit" name="ChatboxLineEdit">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>200</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignTop">
+         <widget class="QPushButton" name="SendButton">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(81, 0, 0);
+color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>Send</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_11">
           <property name="orientation">
-           <enum>Qt::Vertical</enum>
+           <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>20</width>
-            <height>40</height>
+            <width>40</width>
+            <height>20</height>
            </size>
           </property>
          </spacer>
@@ -306,7 +546,7 @@ $1000</string>
        <number>6</number>
       </property>
       <property name="rightMargin">
-       <number>20</number>
+       <number>0</number>
       </property>
       <item>
        <layout class="QVBoxLayout" name="Seat2VLayout" stretch="0,0,0,0,0">
@@ -439,13 +679,13 @@ border-radius: 10px;</string>
           <property name="styleSheet">
            <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.301136 rgba(10, 10, 10, 255), stop:0.789773 rgba(108, 108, 108, 255));
 font: 12pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);
+color: rgb(199,195,195);
 border-radius: 10px;
 border: 2px solid rgb(255, 255, 255);
 </string>
           </property>
           <property name="text">
-           <string>PlayerName
+           <string>Villain 1
 $1000</string>
           </property>
           <property name="alignment">
@@ -485,728 +725,56 @@ $1000</string>
          </widget>
         </item>
         <item>
-         <spacer name="verticalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </item>
-    <item row="0" column="1">
-     <layout class="QGridLayout" name="topSeats" rowstretch="0,0">
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <item row="1" column="4">
-       <spacer name="horizontalSpacer_9">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="0" column="3">
-       <spacer name="verticalSpacer">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="1" column="2">
-       <spacer name="horizontalSpacer_5">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="1" column="1">
-       <layout class="QVBoxLayout" name="Seat3VLayout_2" stretch="0,0,0">
-        <property name="sizeConstraint">
-         <enum>QLayout::SetDefaultConstraint</enum>
-        </property>
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <layout class="QHBoxLayout" name="Seat3HLayout_2" stretch="1,0">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item>
-           <widget class="QLabel" name="S3C2">
-            <property name="minimumSize">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
              <size>
-              <width>53</width>
-              <height>80</height>
+              <width>40</width>
+              <height>20</height>
              </size>
             </property>
-            <property name="maximumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">border: 2px solid rgb(0,0,0);
-border-radius: 10px;</string>
-            </property>
+           </spacer>
+          </item>
+          <item alignment="Qt::AlignRight">
+           <widget class="QLabel" name="label">
             <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>Graphics/4_of_clubs.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
+             <string>TextLabel</string>
             </property>
            </widget>
           </item>
-          <item>
-           <widget class="QLabel" name="S3C1">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
+          <item alignment="Qt::AlignRight|Qt::AlignTop">
+           <widget class="QLabel" name="D3_5">
             <property name="minimumSize">
              <size>
-              <width>53</width>
-              <height>80</height>
+              <width>25</width>
+              <height>25</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>53</width>
-              <height>80</height>
+              <width>25</width>
+              <height>25</height>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: 2px solid rgb(0,0,0);
-border-radius: 10px;</string>
+             <string notr="true">background-color: rgb(213, 213, 213);
+</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap>Graphics/4_of_clubs.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
+             <pixmap>Graphics/DB.png</pixmap>
             </property>
            </widget>
           </item>
          </layout>
         </item>
-        <item>
-         <widget class="QLabel" name="Seat3Label">
-          <property name="minimumSize">
-           <size>
-            <width>123</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>123</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.301136 rgba(10, 10, 10, 255), stop:0.789773 rgba(108, 108, 108, 255));
-font: 12pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);
-border-radius: 10px;
-border: 2px solid rgb(255, 255, 255);
-</string>
-          </property>
-          <property name="text">
-           <string>PlayerName
-$1000</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item alignment="Qt::AlignTop">
-         <widget class="QProgressBar" name="Seat3ProgressBar">
-          <property name="minimumSize">
-           <size>
-            <width>126</width>
-            <height>15</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>126</width>
-            <height>15</height>
-           </size>
-          </property>
-          <property name="layoutDirection">
-           <enum>Qt::LeftToRight</enum>
-          </property>
-          <property name="autoFillBackground">
-           <bool>false</bool>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(0, 0, 0);</string>
-          </property>
-          <property name="value">
-           <number>24</number>
-          </property>
-          <property name="textVisible">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
        </layout>
-      </item>
-      <item row="1" column="3">
-       <layout class="QVBoxLayout" name="Seat4VLayout" stretch="0,0,0">
-        <property name="sizeConstraint">
-         <enum>QLayout::SetDefaultConstraint</enum>
-        </property>
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <layout class="QHBoxLayout" name="Seat4HLayout" stretch="1,0">
-          <item>
-           <widget class="QLabel" name="S4C1">
-            <property name="minimumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">border: 2px solid rgb(0,0,0);
-border-radius: 10px;</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>Graphics/4_of_clubs.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="S4C2">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">border: 2px solid rgb(0,0,0);
-border-radius: 10px;</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>Graphics/4_of_clubs.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <widget class="QLabel" name="Seat4Label">
-          <property name="minimumSize">
-           <size>
-            <width>123</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>123</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.301136 rgba(10, 10, 10, 255), stop:0.789773 rgba(108, 108, 108, 255));
-font: 12pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);
-border-radius: 10px;
-border: 2px solid rgb(255, 255, 255);
-</string>
-          </property>
-          <property name="text">
-           <string>PlayerName
-$1000</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item alignment="Qt::AlignTop">
-         <widget class="QProgressBar" name="Seat4ProgressBar">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>126</width>
-            <height>15</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>126</width>
-            <height>15</height>
-           </size>
-          </property>
-          <property name="layoutDirection">
-           <enum>Qt::LeftToRight</enum>
-          </property>
-          <property name="autoFillBackground">
-           <bool>false</bool>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(0, 0, 0);</string>
-          </property>
-          <property name="value">
-           <number>24</number>
-          </property>
-          <property name="textVisible">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="1" column="0">
-       <spacer name="horizontalSpacer_6">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="0" column="1">
-       <spacer name="verticalSpacer_4">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
-    </item>
-    <item row="3" column="1">
-     <layout class="QGridLayout" name="bottomSeats" rowstretch="0,0">
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <item row="0" column="3">
-       <layout class="QVBoxLayout" name="Seat6VLayout" stretch="0,0,0">
-        <property name="sizeConstraint">
-         <enum>QLayout::SetDefaultConstraint</enum>
-        </property>
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <layout class="QHBoxLayout" name="Seat6HLayout" stretch="1,0">
-          <item>
-           <widget class="QLabel" name="S6C1">
-            <property name="minimumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">border: 2px solid rgb(0,0,0);
-border-radius: 10px;</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>Graphics/3_of_hearts.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="S6C2">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">border: 2px solid rgb(0,0,0);
-border-radius: 10px;</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>Graphics/2_of_clubs.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <widget class="QLabel" name="Seat6Label">
-          <property name="minimumSize">
-           <size>
-            <width>123</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>123</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.301136 rgba(10, 10, 10, 255), stop:0.789773 rgba(108, 108, 108, 255));
-font: 12pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);
-border-radius: 10px;
-border: 2px solid rgb(255, 255, 255);
-</string>
-          </property>
-          <property name="text">
-           <string>PlayerName
-$1000</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item alignment="Qt::AlignTop">
-         <widget class="QProgressBar" name="Seat6ProgressBar">
-          <property name="minimumSize">
-           <size>
-            <width>126</width>
-            <height>15</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>126</width>
-            <height>15</height>
-           </size>
-          </property>
-          <property name="layoutDirection">
-           <enum>Qt::LeftToRight</enum>
-          </property>
-          <property name="autoFillBackground">
-           <bool>false</bool>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(0, 0, 0);</string>
-          </property>
-          <property name="value">
-           <number>24</number>
-          </property>
-          <property name="textVisible">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="0" column="1">
-       <layout class="QVBoxLayout" name="Seat1VLayout" stretch="0,0,0">
-        <property name="sizeConstraint">
-         <enum>QLayout::SetDefaultConstraint</enum>
-        </property>
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <layout class="QHBoxLayout" name="Seat1HLayout" stretch="1,0">
-          <item>
-           <widget class="QLabel" name="S1C1">
-            <property name="minimumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">border: 2px solid rgb(0,0,0);
-border-radius: 10px;</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>Graphics/4_of_clubs.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="S1C2">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">border: 2px solid rgb(0,0,0);
-border-radius: 10px;</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>Graphics/4_of_clubs.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <widget class="QLabel" name="Seat1Label">
-          <property name="minimumSize">
-           <size>
-            <width>123</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>123</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.301136 rgba(10, 10, 10, 255), stop:0.789773 rgba(108, 108, 108, 255));
-font: 12pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);
-border-radius: 10px;
-border: 2px solid rgb(255, 255, 255);
-</string>
-          </property>
-          <property name="text">
-           <string>PlayerName
-$1000</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item alignment="Qt::AlignTop">
-         <widget class="QProgressBar" name="Seat1ProgressBar">
-          <property name="minimumSize">
-           <size>
-            <width>126</width>
-            <height>15</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>126</width>
-            <height>15</height>
-           </size>
-          </property>
-          <property name="layoutDirection">
-           <enum>Qt::LeftToRight</enum>
-          </property>
-          <property name="autoFillBackground">
-           <bool>false</bool>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(0, 0, 0);</string>
-          </property>
-          <property name="value">
-           <number>24</number>
-          </property>
-          <property name="textVisible">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="0" column="2">
-       <spacer name="horizontalSpacer_7">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="0" column="4">
-       <spacer name="horizontalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="0" column="0">
-       <spacer name="horizontalSpacer_4">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="1" column="2">
-       <spacer name="verticalSpacer_10">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
       </item>
      </layout>
     </item>
@@ -1939,225 +1507,818 @@ QPushButton:pressed { background-color: rgba(138,0,0,0.7);}</string>
       </widget>
      </widget>
     </item>
-    <item row="2" column="1">
-     <widget class="QLabel" name="Table">
-      
-      <layout class="QHBoxLayout" name="BoardCards">
-       <item>
-       <spacer name="table_horizontalSpacer1">
+    <item row="3" column="1">
+     <layout class="QGridLayout" name="bottomSeats" rowstretch="0,0,0">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <item row="1" column="4">
+       <spacer name="horizontalSpacer_3">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>20</width>
-          <height>40</height>
+          <width>40</width>
+          <height>20</height>
          </size>
         </property>
        </spacer>
       </item>
-     
-
-       <item>
-           <widget class="QLabel" name="Flop1">
-            <property name="minimumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">border: 2px solid rgb(0,0,0);
-border-radius: 10px;</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>Graphics/4_of_clubs.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="Flop2">
-            <property name="minimumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">border: 2px solid rgb(0,0,0);
-border-radius: 10px;</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>Graphics/4_of_clubs.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="Flop3">
-            <property name="minimumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">border: 2px solid rgb(0,0,0);
-border-radius: 10px;</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>Graphics/4_of_clubs.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="Turn">
-            <property name="minimumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">border: 2px solid rgb(0,0,0);
-border-radius: 10px;</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>Graphics/4_of_clubs.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="River">
-            <property name="minimumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>53</width>
-              <height>80</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">border: 2px solid rgb(0,0,0);
-border-radius: 10px;</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>Graphics/4_of_clubs.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          
-       <item>
-       <spacer name="table_horizontalSpacer2">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+      <item row="1" column="1">
+       <layout class="QVBoxLayout" name="Seat1VLayout" stretch="0,0,0">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetDefaultConstraint</enum>
         </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
+        <property name="topMargin">
+         <number>0</number>
         </property>
-       </spacer>
-      </item>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="Seat1HLayout" stretch="1,0">
+          <item>
+           <widget class="QLabel" name="S1C1">
+            <property name="minimumSize">
+             <size>
+              <width>53</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>53</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 2px solid rgb(0,0,0);
+border-radius: 10px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>Graphics/4_of_clubs.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="S1C2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>53</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>53</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 2px solid rgb(0,0,0);
+border-radius: 10px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>Graphics/4_of_clubs.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="Seat1Label">
+          <property name="minimumSize">
+           <size>
+            <width>123</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>123</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.301136 rgba(10, 10, 10, 255), stop:0.789773 rgba(108, 108, 108, 255));
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(199,195,195);
+border-radius: 10px;
+border: 2px solid rgb(255, 255, 255);
 
-      </layout>
-      
-      <property name="minimumSize">
-       <size>
-        <width>300</width>
-        <height>198</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>250</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border: 2px solid rgb(0,0,0);
-border-radius: 99px;
-background-color: rgb(0, 63, 0);
-font: 'Sans-serif';
-font-size: 16px;
-color: white;
 </string>
+          </property>
+          <property name="text">
+           <string>Hero
+$1000</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignTop">
+         <widget class="QProgressBar" name="Seat1ProgressBar">
+          <property name="minimumSize">
+           <size>
+            <width>126</width>
+            <height>15</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>126</width>
+            <height>15</height>
+           </size>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 0, 0);</string>
+          </property>
+          <property name="value">
+           <number>24</number>
+          </property>
+          <property name="textVisible">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="2">
+       <spacer name="horizontalSpacer_7">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="3">
+       <layout class="QVBoxLayout" name="Seat6VLayout" stretch="0,0,0">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetDefaultConstraint</enum>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="Seat6HLayout" stretch="1,0">
+          <item>
+           <widget class="QLabel" name="S6C1">
+            <property name="minimumSize">
+             <size>
+              <width>53</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>53</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 2px solid rgb(0,0,0);
+border-radius: 10px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>Graphics/3_of_hearts.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="S6C2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>53</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>53</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 2px solid rgb(0,0,0);
+border-radius: 10px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>Graphics/2_of_clubs.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="Seat6Label">
+          <property name="minimumSize">
+           <size>
+            <width>123</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>123</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.301136 rgba(10, 10, 10, 255), stop:0.789773 rgba(108, 108, 108, 255));
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(199,195,195);
+border-radius: 10px;
+border: 2px solid rgb(255, 255, 255);
+</string>
+          </property>
+          <property name="text">
+           <string>Villain 5
+$1000</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignTop">
+         <widget class="QProgressBar" name="Seat6ProgressBar">
+          <property name="minimumSize">
+           <size>
+            <width>126</width>
+            <height>15</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>126</width>
+            <height>15</height>
+           </size>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 0, 0);</string>
+          </property>
+          <property name="value">
+           <number>24</number>
+          </property>
+          <property name="textVisible">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="2" column="2">
+       <spacer name="verticalSpacer_10">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="0">
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="3">
+       <widget class="QLabel" name="D3_3">
+        <property name="minimumSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(213, 213, 213);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>Graphics/DB.png</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="D3_4">
+        <property name="minimumSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(213, 213, 213);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>Graphics/DB.png</pixmap>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="1">
+     <layout class="QGridLayout" name="topSeats" rowstretch="0,0">
+      <property name="topMargin">
+       <number>0</number>
       </property>
-      <property name="text">
-       <string>No-Limit Holdem
-($1/$2) 6-Max</string>
+      <property name="bottomMargin">
+       <number>0</number>
       </property>
-      <property name="textFormat">
-       <enum>Qt::PlainText</enum>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignHCenter|Qt::AlignTop</set>
-      </property>
-      <property name="margin">
-       <number>15</number>
-      </property>
-     </widget>
+      <item row="1" column="4">
+       <spacer name="horizontalSpacer_9">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="3">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="2">
+       <spacer name="horizontalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="1">
+       <layout class="QVBoxLayout" name="Seat3VLayout_2" stretch="0,0,0,0">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetDefaultConstraint</enum>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="Seat3HLayout_2" stretch="1,0">
+          <item>
+           <widget class="QLabel" name="S3C2">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>53</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>53</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 2px solid rgb(0,0,0);
+border-radius: 10px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>Graphics/4_of_clubs.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="S3C1">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>53</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>53</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 2px solid rgb(0,0,0);
+border-radius: 10px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>Graphics/4_of_clubs.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="Seat3Label">
+          <property name="minimumSize">
+           <size>
+            <width>123</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>123</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.301136 rgba(10, 10, 10, 255), stop:0.789773 rgba(108, 108, 108, 255));
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(199,195,195);
+border-radius: 10px;
+border: 2px solid rgb(255, 255, 255);
+</string>
+          </property>
+          <property name="text">
+           <string>Villain 2
+$1000</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignTop">
+         <widget class="QProgressBar" name="Seat3ProgressBar">
+          <property name="minimumSize">
+           <size>
+            <width>126</width>
+            <height>15</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>126</width>
+            <height>15</height>
+           </size>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 0, 0);</string>
+          </property>
+          <property name="value">
+           <number>24</number>
+          </property>
+          <property name="textVisible">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="D3">
+          <property name="minimumSize">
+           <size>
+            <width>25</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>25</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(213, 213, 213);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>Graphics/DB.png</pixmap>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="3">
+       <layout class="QVBoxLayout" name="Seat4VLayout" stretch="0,0,0,0">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetDefaultConstraint</enum>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="Seat4HLayout" stretch="1,0">
+          <item>
+           <widget class="QLabel" name="S4C1">
+            <property name="minimumSize">
+             <size>
+              <width>53</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>53</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 2px solid rgb(0,0,0);
+border-radius: 10px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>Graphics/4_of_clubs.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="S4C2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>53</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>53</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 2px solid rgb(0,0,0);
+border-radius: 10px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>Graphics/4_of_clubs.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="Seat4Label">
+          <property name="minimumSize">
+           <size>
+            <width>123</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>123</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.301136 rgba(10, 10, 10, 255), stop:0.789773 rgba(108, 108, 108, 255));
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(199,195,195);
+border-radius: 10px;
+border: 2px solid rgb(255, 255, 255);
+</string>
+          </property>
+          <property name="text">
+           <string>Villain 3
+$1000</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignTop">
+         <widget class="QProgressBar" name="Seat4ProgressBar">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>126</width>
+            <height>15</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>126</width>
+            <height>15</height>
+           </size>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 0, 0);</string>
+          </property>
+          <property name="value">
+           <number>24</number>
+          </property>
+          <property name="textVisible">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="D4">
+          <property name="minimumSize">
+           <size>
+            <width>25</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>25</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(213, 213, 213);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>Graphics/DB.png</pixmap>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <spacer name="horizontalSpacer_6">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="1">
+       <spacer name="verticalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
