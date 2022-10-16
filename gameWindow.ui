@@ -420,7 +420,7 @@ $1000</string>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <item>
-           <widget class="QLabel" name="D4_2">
+           <widget class="QLabel" name="D5">
             <property name="minimumSize">
              <size>
               <width>25</width>
@@ -747,7 +747,7 @@ $1000</string>
            </widget>
           </item>
           <item alignment="Qt::AlignRight|Qt::AlignTop">
-           <widget class="QLabel" name="D3_5">
+           <widget class="QLabel" name="D2">
             <property name="minimumSize">
              <size>
               <width>25</width>
@@ -1852,7 +1852,7 @@ $1000</string>
        </spacer>
       </item>
       <item row="0" column="3">
-       <widget class="QLabel" name="D3_3">
+       <widget class="QLabel" name="D6">
         <property name="minimumSize">
          <size>
           <width>25</width>
@@ -1877,7 +1877,7 @@ $1000</string>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLabel" name="D3_4">
+       <widget class="QLabel" name="D1">
         <property name="minimumSize">
          <size>
           <width>25</width>

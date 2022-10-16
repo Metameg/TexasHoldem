@@ -6,7 +6,7 @@ from LinkedList import SLinkedList, Node
 from Player import Player
 from deck import Deck
 
-
+GUI_object = None
 class UI(QMainWindow):
 
     # Initialize function
@@ -36,12 +36,12 @@ class UI(QMainWindow):
 
         for i in range(1, num_players_hidden): 
             player_labels.pop(-i)
-            print(len(player_labels))
-        for i in range(len(player_labels) - 1):
+            
+        for i in range(self.numPlayers):
             player_labels[i].show()
         
-        if self.numPlayers == 6:
-            player_labels[5].show()
+        # if self.numPlayers == 6:
+        #     player_labels[5].show()
 
         # Cards
         self.player_card_labels = [
@@ -75,12 +75,21 @@ class UI(QMainWindow):
                              self.findChild(QProgressBar, "Seat5ProgressBar"),
                              self.findChild(QProgressBar, "Seat6ProgressBar") ]
 
+        # Dealer Buttons
+        self.D_buttons = [self.findChild(QLabel, "D1"),
+                          self.findChild(QLabel, "D2"),
+                          self.findChild(QLabel, "D3"),
+                          self.findChild(QLabel, "D4"),
+                          self.findChild(QLabel, "D5"),
+                          self.findChild(QLabel, "D6")]
+
         # Table        
         self.Table = self.findChild(QLabel, "Table")
         
         # Hide all progress bars initially
-        for i in range(len(self.progress_bars)):
+        for i in range(self.numPlayers):
             self.progress_bars[i].hide()
+            self.D_buttons[i].hide()
         # Hide Board Cards initially
         self.flop_labels[0].hide()
         self.flop_labels[1].hide()
@@ -88,7 +97,6 @@ class UI(QMainWindow):
         self.turn_label.hide()
         self.river_label.hide()
         
-
 
         self.SendButton = self.findChild(QPushButton, "SendButton")
         self.CallButton = self.findChild(QPushButton, "Call")
@@ -105,8 +113,6 @@ class UI(QMainWindow):
         # Initialize the deck
         self.deck = Deck.get_deck()
 
-        
-        
         # Other Values
         self.player_hand_images = []
         self.potAmount = 3.00
@@ -114,19 +120,24 @@ class UI(QMainWindow):
         
         self.betAmountEdit.setText(str(self.potAmount))
         self.SB_pos = 1
-        self.player_turn = self.SB_pos
-        
+        self.player_turn_index = self.SB_pos - 1
+        self.D_index = 5
+        self.D_buttons[self.D_index].show()
+
         
         # Create Linked List of Players
         self.players = SLinkedList()
-        self.players.head = Node(Player(True, self.SB_pos))
-        self.player_hand_images.append(self.players.head.dataval.create_hand_images())
+        self.players.head = Node(Player(True, self.SB_pos)) # Hero
+        hero_player = self.players.head.dataval
+        # Generate pixmaps
+        self.player_hand_images.append(hero_player.create_hand_images(hero_player.card1, hero_player.card2))
 
+        # Villains
         for i in range(1, self.numPlayers):
             new_player = Player(False, i+1)
             self.players.add_node(new_player)
-            self.player_hand_images.append(new_player.create_hand_images())
-            print(new_player.card1, new_player.card2)
+            self.player_hand_images.append(new_player.create_hand_images(new_player.card1, new_player.card2))
+            
             
         # Select Board Cards
         self.flop_cards = self.deck.draw_flop()
@@ -144,7 +155,16 @@ class UI(QMainWindow):
         # Show the App
         self.next_turn()
         self.show()
+
+    # Getter function following Singleton Pattern
+    def get_GUI():
+        global GUI_object
     
+        if GUI_object is None:
+            GUI_object = UI()
+
+        return GUI_object
+
     def call_clicked(self):
         self.potAmount += self.callAmount
         self.betAmountEdit.setText(str(self.potAmount))
@@ -153,32 +173,25 @@ class UI(QMainWindow):
     def raise_clicked(self):
         self.find_winner()
 
+    def next_hand(self):
+        self.D_index += 1
+        if self.D_index >= self.numPlayers:
+            self.D_index = 0
+        elif self.D_index < 0:
+            self.D_index = 5
+        
     def next_turn(self):
+        hide_index = self.player_turn_index - 1 
+        if self.player_turn_index > self.numPlayers - 1:
+            self.player_turn_index = 0
+        elif hide_index < 0:
+            hide_index = self.numPlayers - 1
 
-        if self.player_turn == 1:
-            self.progress_bars[0].show()
-            self.progress_bars[5].hide()
-        elif self.player_turn == 2:
-            self.progress_bars[1].show()
-            self.progress_bars[0].hide()
-        elif self.player_turn == 3:
-            self.progress_bars[2].show()
-            self.progress_bars[1].hide()
-        elif self.player_turn == 4:
-            self.progress_bars[3].show()
-            self.progress_bars[2].hide()
-        elif self.player_turn == 5:
-            self.progress_bars[4].show()
-            self.progress_bars[3].hide()
-        elif self.player_turn == 6:
-            self.progress_bars[5].show()
-            self.progress_bars[4].hide()
-        else:
-            self.player_turn = 1
-            self.progress_bars[0].show()
-            self.progress_bars[5].hide()
+        self.progress_bars[self.player_turn_index].show()
+        self.progress_bars[hide_index].hide()
+        
+        self.player_turn_index += 1
 
-        self.player_turn += 1
 
     def assign_player_pixmaps(self):
         card_no = -1
@@ -246,7 +259,7 @@ class UI(QMainWindow):
             else:
                 #pass fold animation
                 pass
-            hero_hand = hero.create_hand_images()
+            hero_hand = hero.create_hand_images(hero.card1, hero.card2)
             self.player_hand_images[hero.seat - 1] = hero_hand
             self.assign_player_pixmaps()
 
@@ -266,6 +279,7 @@ class UI(QMainWindow):
             
 
 # Initialize and run app
+# if __name__ == "__main__":
 app = QApplication(sys.argv)
 UIWindow = UI()
 app.exec_()

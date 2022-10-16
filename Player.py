@@ -18,11 +18,11 @@ class Player(object):
     # def __del__(self):
         #pass
 
-    def create_hand_images(self):
+    def create_hand_images(self, card1, card2):
    
         if (self.faceup):
-            card1_image = QPixmap(self.card1)
-            card2_image = QPixmap(self.card2)
+            card1_image = QPixmap(card1)
+            card2_image = QPixmap(card2)
         else:
             card1_image = QPixmap("Graphics/card_back.png")
             card2_image = QPixmap("Graphics/card_back.png")
