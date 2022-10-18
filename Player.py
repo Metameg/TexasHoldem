@@ -18,7 +18,7 @@ class Player(object):
     # def __del__(self):
         #pass
 
-    def create_hand_images(self, card1, card2):
+    def create_hand_images(self, card1, card2=None):
    
         if (self.faceup):
             card1_image = QPixmap(card1)

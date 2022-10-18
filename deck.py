@@ -1,5 +1,4 @@
 import random
-from tkinter import *
 from PyQt5.QtGui import QPixmap
 
 deck_object = None

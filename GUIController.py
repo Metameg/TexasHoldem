@@ -58,6 +58,8 @@ class UI(QMainWindow):
                     self.findChild(QLabel, "S6C1"),
                     self.findChild(QLabel, "S6C2")]
 
+        for i in range(len(self.player_card_labels)):
+            self.player_card_labels[i].hide()
         # Board Cards
         self.flop_labels = [
                     self.findChild(QLabel, "Flop1"),
@@ -106,7 +108,7 @@ class UI(QMainWindow):
         self.betAmountEdit = self.findChild(QLineEdit, "betAmount")
 
         # Click Buttons
-        self.SendButton.clicked.connect(self.find_winner)
+        # self.SendButton.clicked.connect(self.find_winner)
         self.CallButton.clicked.connect(self.call_clicked)
         self.RaiseButton.clicked.connect(self.raise_clicked)
 
@@ -126,17 +128,17 @@ class UI(QMainWindow):
 
         
         # Create Linked List of Players
-        self.players = SLinkedList()
-        self.players.head = Node(Player(True, self.SB_pos)) # Hero
-        hero_player = self.players.head.dataval
-        # Generate pixmaps
-        self.player_hand_images.append(hero_player.create_hand_images(hero_player.card1, hero_player.card2))
+        # self.players = SLinkedList()
+        # self.players.head = Node(Player(True, self.SB_pos)) # Hero
+        # hero_player = self.players.head.dataval
+        # # Generate pixmaps
+        # self.player_hand_images.append(hero_player.create_hand_images(hero_player.card1, hero_player.card2))
 
         # Villains
-        for i in range(1, self.numPlayers):
-            new_player = Player(False, i+1)
-            self.players.add_node(new_player)
-            self.player_hand_images.append(new_player.create_hand_images(new_player.card1, new_player.card2))
+        # for i in range(1, self.numPlayers):
+        #     new_player = Player(False, i+1)
+        #     self.players.add_node(new_player)
+        #     self.player_hand_images.append(new_player.create_hand_images(new_player.card1, new_player.card2))
             
             
         # Select Board Cards
@@ -145,12 +147,12 @@ class UI(QMainWindow):
         self.river_card = self.deck.draw_one()
 
         # Draw board cards
-        for i in range(3):
-            self.assign_board_pixmaps(self.flop_labels[i], self.flop_cards[i])
-        self.assign_board_pixmaps(self.turn_label, self.turn_card)
-        self.assign_board_pixmaps(self.river_label, self.river_card)
+        # for i in range(3):
+        #     self.assign_board_pixmaps(self.flop_labels[i], self.flop_cards[i])
+        # self.assign_board_pixmaps(self.turn_label, self.turn_card)
+        # self.assign_board_pixmaps(self.river_label, self.river_card)
 
-        self.assign_player_pixmaps()
+        # self.assign_player_pixmaps()
             
         # Show the App
         self.next_turn()
@@ -193,14 +195,14 @@ class UI(QMainWindow):
         self.player_turn_index += 1
 
 
-    def assign_player_pixmaps(self):
-        card_no = -1
-        for hand in self.player_hand_images:
-            card_no += 2
-            _card1 = card_no - 1
-            _card2 = card_no
-            self.player_card_labels[_card1].setPixmap(hand[0])
-            self.player_card_labels[_card2].setPixmap(hand[1])
+    # def assign_player_pixmaps(self):
+    #     card_no = -1
+    #     for hand in self.player_hand_images:
+    #         card_no += 2
+    #         _card1 = card_no - 1
+    #         _card2 = card_no
+    #         self.player_card_labels[_card1].setPixmap(hand[0])
+    #         self.player_card_labels[_card2].setPixmap(hand[1])
 
     def assign_board_pixmaps(self, label, card):
         label.setPixmap(card)
@@ -280,6 +282,6 @@ class UI(QMainWindow):
 
 # Initialize and run app
 # if __name__ == "__main__":
-app = QApplication(sys.argv)
-UIWindow = UI()
-app.exec_()
+# app = QApplication(sys.argv)
+# UIWindow = UI()
+# app.exec_()

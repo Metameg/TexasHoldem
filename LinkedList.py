@@ -1,3 +1,4 @@
+
 class Node:
    def __init__(self, dataval=None):
       self.dataval = dataval
@@ -49,7 +50,7 @@ class SLinkedList:
       NewNode.next = middle_node.next
       middle_node.next = NewNode
 
-   #FIXME Add get_node function
+
    def get_node(self, player):
       node = self.head
       while node.get_data() != player:
@@ -58,8 +59,24 @@ class SLinkedList:
                return None
       return node
 
-   def listprint(self):
+   def list_print(self):
       printval = self.head
       while printval is not None:
          print (printval.dataval)
          printval = printval.next
+
+   def get_nth_node(self, n):
+      count = 0
+      current = self.head
+      while current:
+         if count == n:
+            return current.dataval
+         count += 1
+         current = current.next
+
+   def iterate_from(self, list_item):
+      while list_item is not None:
+
+         yield list_item
+         list_item = list_item.next
+         
