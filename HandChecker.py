@@ -1,16 +1,13 @@
 
-
+RANK_NAMES = {0: "2", 1: "3", 2: "4", 3: "5", 4: "6", 5: "7", 6: "8",
+                    7: "9", 8: "10", 9: "jack",  10: "queen", 11: "king", 12: "ace"}
+                    
 class HandChecker(object):
-
     def __init__(self, all_cards, exposed_cards):
         self.all_cards = all_cards
         self.exposed_cards = exposed_cards
         self.exposed_card_coordinates = []
-        self.pair_list = []
-        # Map linking rank values to the name of the card
-        self.rank_names = {0: "2", 1: "3", 2: "4", 3: "5", 4: "6", 5: "7", 6: "8",
-                      7: "9", 8: "10", 9: "Jack",  10: "Queen", 11: "King", 12: "Ace"}
-        
+        self.pair_list = []        
 
     def _find_card_index(self, theList, item):
         for i in range(len(theList)):
@@ -219,7 +216,7 @@ class HandChecker(object):
         
         if self._is_flush(exposed_suits)[1] != -1:
 
-            print(self.rank_names[self._is_flush(exposed_suits)[1]], "high straight Flush")
+            print(RANK_NAMES[self._is_flush(exposed_suits)[1]], "high straight Flush")
             return [8, self._is_flush(exposed_suits)[1]]
         
         elif  threeOfKind_count == 3:
@@ -227,24 +224,24 @@ class HandChecker(object):
             kicker_ranks = exposed_ranks.remove(threeOfKind_rank)
             kicker_list = self.create_kicker_list(kicker_ranks, num_kickers)    
 
-            print("Four of a Kind", self.rank_names[threeOfKind_rank] + "'s", kicker_list[0])
+            print("Four of a Kind", RANK_NAMES[threeOfKind_rank] + "'s", kicker_list[0])
             return[7, threeOfKind_rank, kicker_list[0]]
         
         elif fullHouse_pair != -1:
         
-            print ("Full House", self.rank_names[threeOfKind_rank] + "'s", "over", self.rank_names[fullHouse_pair] + "'s" )
+            print ("Full House", RANK_NAMES[threeOfKind_rank] + "'s", "over", RANK_NAMES[fullHouse_pair] + "'s" )
             return[6, threeOfKind_rank, fullHouse_pair]
         
         elif self._is_flush(exposed_suits)[0]:
         
             flush = self._is_flush(exposed_suits)[0]
         
-            print(self.rank_names[flush[0]], "high flush.", flush[1], flush[2], flush[3], flush[4])
+            print(RANK_NAMES[flush[0]], "high flush.", flush[1], flush[2], flush[3], flush[4])
             return [5, flush[0], flush[1], flush[2], flush[3], flush[4]]
         
         elif self._is_straight(exposed_ranks) != -1:
         
-            print(self.rank_names[self._is_straight(exposed_ranks)], "high straight")
+            print(RANK_NAMES[self._is_straight(exposed_ranks)], "high straight")
             return[4, self._is_straight(exposed_ranks)]
         
         elif threeOfKind_count == 1:
@@ -252,7 +249,7 @@ class HandChecker(object):
             kicker_ranks = [rank for rank in exposed_ranks if rank != threeOfKind_rank]
             kicker_list = self.create_kicker_list(kicker_ranks, num_kickers)    
         
-            print("Three of a Kind", self.rank_names[threeOfKind_rank] + "'s", self.rank_names[kicker_list[1]], self.rank_names[kicker_list[0]]) 
+            print("Three of a Kind", RANK_NAMES[threeOfKind_rank] + "'s", RANK_NAMES[kicker_list[1]], RANK_NAMES[kicker_list[0]]) 
             return[3, threeOfKind_rank, kicker_list]
         
         elif pairs[1] != -1 and threeOfKind_count < 1:
@@ -260,7 +257,7 @@ class HandChecker(object):
             kicker_ranks = [rank for rank in exposed_ranks if (rank != pairs[0] and rank != pairs[1])]
             kicker_list = self.create_kicker_list(kicker_ranks, num_kickers)    
         
-            print("Two Pair", self.rank_names[pairs[0]] + "'s", "and", self.rank_names[pairs[1]] + "'s", self.rank_names[kicker_list[0]])      
+            print("Two Pair", RANK_NAMES[pairs[0]] + "'s", "and", RANK_NAMES[pairs[1]] + "'s", RANK_NAMES[kicker_list[0]])      
             return[2, pairs[0], pairs[1], kicker_list]
         
         elif pairs[0] != -1 and pairs[1] == -1:
@@ -268,9 +265,9 @@ class HandChecker(object):
             kicker_ranks = [rank for rank in exposed_ranks if rank != pairs[0]]
             kicker_list = self.create_kicker_list(kicker_ranks, num_kickers) 
             if (len(kicker_list) != 0):
-                print("Pair of", self.rank_names[pairs[0]] + "'s", self.rank_names[kicker_list[2]], self.rank_names[kicker_list[1]], self.rank_names[kicker_list[0]])
+                print("Pair of", RANK_NAMES[pairs[0]] + "'s", RANK_NAMES[kicker_list[2]], RANK_NAMES[kicker_list[1]], RANK_NAMES[kicker_list[0]])
             else:
-                print("Pair of", self.rank_names[pairs[0]] + "'s")
+                print("Pair of", RANK_NAMES[pairs[0]] + "'s")
             return[1, pairs[0], kicker_list]
         
         else:

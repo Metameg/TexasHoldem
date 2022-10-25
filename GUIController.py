@@ -1,6 +1,5 @@
 from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QProgressBar, QLineEdit, QPushButton, QTextEdit, QStackedWidget, QRadioButton
-from PyQt5 import uic, QtWidgets, QtCore, QtGui
-from PyQt5.QtGui import QPixmap
+from PyQt5 import uic
 import sys
 from LinkedList import SLinkedList, Node
 from Player import Player
@@ -39,9 +38,6 @@ class UI(QMainWindow):
             
         for i in range(self.numPlayers):
             player_labels[i].show()
-        
-        # if self.numPlayers == 6:
-        #     player_labels[5].show()
 
         # Cards
         self.player_card_labels = [
@@ -88,7 +84,7 @@ class UI(QMainWindow):
         # Table        
         self.Table = self.findChild(QLabel, "Table")
         
-        # Hide all progress bars initially
+        # Hide all progress bars, dealear buttons initially
         for i in range(self.numPlayers):
             self.progress_bars[i].hide()
             self.D_buttons[i].hide()
@@ -123,22 +119,21 @@ class UI(QMainWindow):
         self.betAmountEdit.setText(str(self.potAmount))
         self.SB_pos = 1
         self.player_turn_index = self.SB_pos - 1
-        self.D_index = 5
-        self.D_buttons[self.D_index].show()
+        self.D_index = -1
 
         
         # Create Linked List of Players
-        # self.players = SLinkedList()
-        # self.players.head = Node(Player(True, self.SB_pos)) # Hero
-        # hero_player = self.players.head.dataval
-        # # Generate pixmaps
-        # self.player_hand_images.append(hero_player.create_hand_images(hero_player.card1, hero_player.card2))
+        self.players = SLinkedList()
+        self.players.head = Node(Player(True, self.SB_pos)) # Hero
+        hero_player = self.players.head.dataval
+        # Generate pixmaps
+        self.player_hand_images.append(hero_player.create_hand_images(hero_player.card1, hero_player.card2))
 
         # Villains
-        # for i in range(1, self.numPlayers):
-        #     new_player = Player(False, i+1)
-        #     self.players.add_node(new_player)
-        #     self.player_hand_images.append(new_player.create_hand_images(new_player.card1, new_player.card2))
+        for i in range(1, self.numPlayers):
+            new_player = Player(False, i+1)
+            self.players.add_node(new_player)
+            self.player_hand_images.append(new_player.create_hand_images(new_player.card1, new_player.card2))
             
             
         # Select Board Cards
@@ -152,7 +147,7 @@ class UI(QMainWindow):
         # self.assign_board_pixmaps(self.turn_label, self.turn_card)
         # self.assign_board_pixmaps(self.river_label, self.river_card)
 
-        # self.assign_player_pixmaps()
+        self.assign_player_pixmaps()
             
         # Show the App
         self.next_turn()
@@ -195,14 +190,14 @@ class UI(QMainWindow):
         self.player_turn_index += 1
 
 
-    # def assign_player_pixmaps(self):
-    #     card_no = -1
-    #     for hand in self.player_hand_images:
-    #         card_no += 2
-    #         _card1 = card_no - 1
-    #         _card2 = card_no
-    #         self.player_card_labels[_card1].setPixmap(hand[0])
-    #         self.player_card_labels[_card2].setPixmap(hand[1])
+    def assign_player_pixmaps(self):
+        card_no = -1
+        for hand in self.player_hand_images:
+            card_no += 2
+            _card1 = card_no - 1
+            _card2 = card_no
+            self.player_card_labels[_card1].setPixmap(hand[0])
+            self.player_card_labels[_card2].setPixmap(hand[1])
 
     def assign_board_pixmaps(self, label, card):
         label.setPixmap(card)
@@ -279,9 +274,8 @@ class UI(QMainWindow):
         else:
             print("Seat", hero.seat, "wins")
             
-
 # Initialize and run app
-# if __name__ == "__main__":
-# app = QApplication(sys.argv)
-# UIWindow = UI()
-# app.exec_()
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    UIWindow = UI()
+    app.exec_()

@@ -69,17 +69,8 @@ class Deck(object):
 
         ]
         
-        # A list to store resized images. This stores the cards that 
-        # are already pulled from the deck and stores them in memory so
-        # they can be drawn.
-        self.card_images = []
-        # A copy of the images list that will be used to remove cards
-        # already pulled from the deck.
         self.taken_cards = []
-        # A list to keep track of the exposed cards
         self.exposed_cards = []
-
-        self.temp_card_images = []
     
     def get_deck():
         global deck_object
@@ -114,10 +105,14 @@ class Deck(object):
         
         return [card1, card2, card3]
         
-
     def draw_one(self):
         card = QPixmap(self.select_card(True))
         
         return card
+
+    def shuffle(self):
+        self.__init__()
+        print(self.exposed_cards)     
+
 
     
